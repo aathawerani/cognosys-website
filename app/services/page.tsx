@@ -1,5 +1,8 @@
 import ServiceCard from "@/components/ServiceCard";
 
+export const metadata = {
+  title: "Services",
+};
 
 export default function ServicesPage() {
   return (

@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "About",
+};
+
 export default function AboutPage() {
   return (
     <section className="max-w-4xl mx-auto px-6 py-20 space-y-16">

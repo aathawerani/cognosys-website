@@ -3,6 +3,9 @@
 import { useState } from "react";
 
 
+export const metadata = {
+  title: "Contact",
+};
 
 
 export default function ContactPage() {
