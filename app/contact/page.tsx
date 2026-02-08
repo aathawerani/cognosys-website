@@ -3,12 +3,9 @@
 import { useState } from "react";
 
 
-export const metadata = {
-  title: "Contact",
-};
-
-
 export default function ContactPage() {
+
+const [error, setError] = useState(false);
 
 const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -37,11 +34,12 @@ const [name, setName] = useState("");
 
     if (res.ok) {
       setSuccess(true);
+      setError(false);
       setName("");
       setEmail("");
       setMessage("");
     } else {
-      alert("Something went wrong. Please try again.");
+      setError(true);
     }
   }
 
@@ -81,6 +79,13 @@ const [name, setName] = useState("");
           required
           className="w-full rounded-lg border px-4 py-3"
         />
+        <input
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          className="hidden"
+        />
         <label className="block text-sm text-slate-600 mb-1">
           Your message
         </label>
@@ -100,7 +105,12 @@ const [name, setName] = useState("");
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
-              {success && (
+        {error && (
+          <p className="mt-4 text-red-600">
+            Something went wrong. Please try again later.
+          </p>
+        )}
+        {success && (
         <p className="mt-4 text-green-600">
           Your message has been sent successfully.
         </p>
