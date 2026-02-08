@@ -46,7 +46,7 @@ export default function Header() {
           </Link>
           <Link
             href="/contact"
-            className={pathname === "/contact" ? "px-4 py-2 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition" : "text-slate-700"}
+            className="px-4 py-2 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition"
           >
             Contact
           </Link>
